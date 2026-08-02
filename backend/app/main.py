@@ -6,7 +6,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 # Import routers
-from app.routes import health, users, exercises, workouts, progress
+from app.routes.health import router as health_router
+from app.routes.auth import router as auth_router
 
 # Load configuration
 from app.config.settings import settings
@@ -31,11 +32,8 @@ app.add_middleware(
 )
 
 # Include routers
-app.include_router(health.router, prefix="/api/v1/health", tags=["health"])
-app.include_router(users.router, prefix="/api/v1/users", tags=["users"])
-app.include_router(exercises.router, prefix="/api/v1/exercises", tags=["exercises"])
-app.include_router(workouts.router, prefix="/api/v1/workouts", tags=["workouts"])
-app.include_router(progress.router, prefix="/api/v1/progress", tags=["progress"])
+app.include_router(health_router, tags=["health"])
+app.include_router(auth_router, tags=["authentication"])
 
 
 # Root endpoint

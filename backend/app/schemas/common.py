@@ -14,6 +14,18 @@ class MessageResponse(BaseModel):
     success: bool = True
 
 
+class SuccessResponse(BaseModel):
+    """Standard success response"""
+    message: str = "Success"
+    success: bool = True
+
+
+class ErrorResponse(BaseModel):
+    """Standard error response"""
+    error: str
+    success: bool = False
+
+
 class ApiResponse(BaseModel, Generic[T]):
     """Generic API response wrapper"""
     data: Optional[T] = None

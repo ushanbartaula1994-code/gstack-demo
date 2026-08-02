@@ -27,6 +27,10 @@ stripe==8.5.0
 # Claude API (LLM)
 anthropic==0.34.0
 
+# Supabase
+supabase==2.6.0
+python-jwt==3.3.0
+
 # CORS
 python-multipart==0.0.9
 

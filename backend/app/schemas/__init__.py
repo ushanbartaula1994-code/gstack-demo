@@ -8,14 +8,22 @@ from app.schemas.workout import (
     WorkoutListResponse,
 )
 from app.schemas.progress import ProgressResponse
-from app.schemas.auth import LoginRequest, RegisterRequest, TokenResponse
-from app.schemas.common import MessageResponse
+from app.schemas.auth import Token, TokenData, UserAuth, UserAuthResponse
+from app.schemas.common import (
+    MessageResponse,
+    SuccessResponse,
+    ErrorResponse,
+    ApiResponse,
+    PaginatedResponse,
+    FilterParams,
+)
 
 __all__ = [
     # Auth
-    "LoginRequest",
-    "RegisterRequest",
-    "TokenResponse",
+    "Token",
+    "TokenData",
+    "UserAuth",
+    "UserAuthResponse",
     # User
     "UserProfileCreate",
     "UserProfileUpdate",
@@ -32,4 +40,9 @@ __all__ = [
     "ProgressResponse",
     # Common
     "MessageResponse",
+    "SuccessResponse",
+    "ErrorResponse",
+    "ApiResponse",
+    "PaginatedResponse",
+    "FilterParams",
 ]
